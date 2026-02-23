@@ -1,6 +1,5 @@
 streamlit
-scikit-learn
+psycopg2-binary
 pandas
 numpy
-
-psycopg2
+scikit-learn
