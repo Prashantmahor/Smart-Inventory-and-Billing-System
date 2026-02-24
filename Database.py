@@ -13,9 +13,6 @@ def connection():
 
 conn = connection()
 
-# ----------------------------
-# CREATE TABLES IF NOT EXIST
-# ----------------------------
 def init_db():
     if conn is None:
         return
@@ -30,7 +27,23 @@ def init_db():
     )
     """)
 
+    cur.execute("""
+    CREATE TABLE IF NOT EXISTS customers (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        contact TEXT
+    )
+    """)
+
+    cur.execute("""
+    CREATE TABLE IF NOT EXISTS sales (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        customer_id INTEGER,
+        total REAL,
+        date TEXT
+    )
+    """)
+
     conn.commit()
 
-# Run at import time
 init_db()
