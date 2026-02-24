@@ -1,4 +1,3 @@
-
 import sqlite3
 import os
 
@@ -13,6 +12,7 @@ def connection():
         return None
 
 conn = connection()
+
 # ----------------------------
 # CREATE TABLES IF NOT EXIST
 # ----------------------------
@@ -34,6 +34,3 @@ def init_db():
 
 # Run at import time
 init_db()
-
-
-
